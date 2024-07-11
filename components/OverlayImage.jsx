@@ -2,35 +2,31 @@ import React from 'react'
 import Image from 'next/image'
 import '@/styles/images.module.css'
 import moment from 'moment'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faImage } from '@fortawesome/free-regular-svg-icons'
 
-const OverlayImage = ({quote}) => {
-    console.log(quote)
-    // const quote = {
-    //     id: 2,
-    //     username: "sandy",
-    //     text: "testing",
-    //     mediaUrl: "https://media.crafto.app/home/900x900/4653c87a-83f8-4326-afa0-1a06086550ef?dimension=900x900",
-    //     createdAt: "2024-06-24T14:02:40.000Z",
-    //     updatedAt: "2024-06-24T14:02:40.000Z"
-    // }
+const OverlayImage = ({ quote }) => {
+
     return (
-        <div className='w-max text-center text-lg font-semibold mx-4 mb-4'>
+        <div className='w-max text-center text-lg font-semibold mx-auto mb-4'>
             <div className='relative'>
                 {
                     quote?.mediaUrl ? (
                         <Image
-                    src={quote?.mediaUrl}
-                    alt="Image with overlay"
-                    width={300}
-                    height={300}
-                />
+                            src={quote?.mediaUrl}
+                            alt="Image with overlay"
+                            width={300}
+                            height={300}
+                        />
                     )
-                    : (
-                        <p>No Image Available</p>
-                    )
+                        : (
+                            <div>
+                            <FontAwesomeIcon className='w-52 h-52 text-gray-200' icon={faImage} />
+                            </div>
+                        )
                 }
                 <div className='absolute z-50 top-[50%] left-[50%]'>
-                    <p>{quote?.text ?? '--'}</p>
+                    <p className=' glassmorphism '>{quote?.text ?? '--'}</p>
                 </div>
             </div>
             <div className='text-sm text-left'>
