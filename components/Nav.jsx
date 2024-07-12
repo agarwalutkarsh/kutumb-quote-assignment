@@ -24,7 +24,7 @@ const Nav = () => {
       <div className='flex flex-row'>
         <Link href='/' className='flex gap-3'>
           <Image src="/assets/images/kutumb_logo.png" alt='Logo' width={30} height={30} className='ml-8 object-contain' />
-          <p className='logo_text'>Kutumb Quotes Assignment - Utkarsh Agarwal</p>
+          <p className='logo_text my-auto'>Kutumb Quotes Assignment - Utkarsh Agarwal</p>
         </Link>
         {
           !isUserLoggedIn
@@ -32,10 +32,10 @@ const Nav = () => {
               <span className='black_btn mx-2 hover:cursor-pointer ml-auto mr-2 max-h-12' >Login</span>
             </>
             : <div className='flex flex-col md:flex-row ml-auto mr-2 w-max max-h-12'>
-              <Link href='/create-post' className='black_btn my-2 mr-8' >
+              <Link href='/create' className='black_btn my-2 mr-8' >
                 Create
               </Link>
-              <span  className='outline_btn mr-8 hover: cursor-pointer' onClick={logoutHandler}>Logout</span>
+              <span  className='outline_btn mr-8 w-max max-h-12 hover: cursor-pointer' onClick={logoutHandler}>Logout</span>
             </div>
         }
       </div>

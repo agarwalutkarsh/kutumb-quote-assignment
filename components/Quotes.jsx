@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowAltCircleLeft } from '@fortawesome/free-regular-svg-icons'
 import { faArrowAltCircleRight } from '@fortawesome/free-regular-svg-icons'
 import NotAvailable from './NotAvailable'
+import { useRouter } from 'next/navigation'
 
 
 const Quotes = () => {
@@ -16,11 +17,18 @@ const Quotes = () => {
     const [downPageDisabled, setDownPageDisabled] = useState(false)
     const [upPageDisabled, setUpPageDisabled] = useState(false)
     const mainContext = useContext(MainContext)
+    const router = useRouter()
     const getQuotesFunc = () => {
         const quotes = getAllQuotes(page)
         quotes.then((resp) => {
-            console.log(resp.data)
-            setQuotesArr(resp?.data?.data)
+            if (resp.status === 200) {
+                setQuotesArr(resp?.data?.data)
+            }
+            // else {
+            //     alert('Please Login Again')
+            //     mainContext.setIsLoggedIn(false)
+            //     router.push('/')
+            // }
         }).catch(err => console.error(err))
     }
     useEffect(() => {
@@ -50,7 +58,7 @@ const Quotes = () => {
 
             {
 
-                mainContext.isLoggedIn
+                mainContext?.isLoggedIn
                     ? <>
                         <div className='flex w-full justify-center  mt-4'>
                             <button disabled={downPageDisabled} onClick={pageDown}><FontAwesomeIcon icon={faArrowAltCircleLeft} className={`mr-2 w-5 h-5 mt-1 ${downPageDisabled ? 'text-gray-400' : 'text-orange-400'}`} /></button>

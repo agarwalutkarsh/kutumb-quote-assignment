@@ -5,11 +5,14 @@ import Loading from './Loading'
 import { MainContext } from './ContextApi/MainContext'
 import { TextField } from '@mui/material'
 import { loginApi } from '@/ApiService/Auth'
+import { useRouter } from 'next/navigation';
+
 
 const Login = () => {
     const [formBody, setFormBody] = useState({})
     const [showOtp, setShowOtp] = useState(false)
     const [loading, setLoading] = useState(false)
+    const router = useRouter()
     const mainContext = useContext(MainContext)
 
     const loginFunc = (e) => {

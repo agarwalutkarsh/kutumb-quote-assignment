@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import '@/styles/images.module.css'
 import moment from 'moment'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage } from '@fortawesome/free-regular-svg-icons'
@@ -8,7 +7,7 @@ import { faImage } from '@fortawesome/free-regular-svg-icons'
 const OverlayImage = ({ quote }) => {
 
     return (
-        <div className='w-max text-center text-lg font-semibold mx-auto mb-4'>
+        <div className='w-max text-center text-lg font-semibold mx-auto mb-4 '>
             <div className='relative'>
                 {
                     quote?.mediaUrl ? (

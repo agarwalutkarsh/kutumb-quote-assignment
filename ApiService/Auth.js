@@ -1,8 +1,8 @@
 import axios from "axios"
 
-export const loginApi = (formData) => {
+export const loginApi = async (formData) => {
     try {
-        const resp = axios.post(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
+        const resp = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
             username: formData.username,
             otp: formData?.otp
         }, {
