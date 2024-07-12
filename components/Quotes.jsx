@@ -1,14 +1,12 @@
 'use client'
 import { getAllQuotes } from '@/ApiService/Quotes'
 import React, { useContext, useEffect, useState } from 'react'
-import Login from './Login'
 import { MainContext } from './ContextApi/MainContext'
 import OverlayImage from './OverlayImage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowAltCircleLeft } from '@fortawesome/free-regular-svg-icons'
 import { faArrowAltCircleRight } from '@fortawesome/free-regular-svg-icons'
 import NotAvailable from './NotAvailable'
-import { useRouter } from 'next/navigation'
 
 
 const Quotes = () => {
@@ -17,18 +15,12 @@ const Quotes = () => {
     const [downPageDisabled, setDownPageDisabled] = useState(false)
     const [upPageDisabled, setUpPageDisabled] = useState(false)
     const mainContext = useContext(MainContext)
-    const router = useRouter()
     const getQuotesFunc = () => {
         const quotes = getAllQuotes(page)
         quotes.then((resp) => {
             if (resp.status === 200) {
                 setQuotesArr(resp?.data?.data)
             }
-            // else {
-            //     alert('Please Login Again')
-            //     mainContext.setIsLoggedIn(false)
-            //     router.push('/')
-            // }
         }).catch(err => console.error(err))
     }
     useEffect(() => {
@@ -65,7 +57,7 @@ const Quotes = () => {
                             <p className='my-auto'>{page}</p>
                             <button disabled={upPageDisabled} onClick={pageUp}><FontAwesomeIcon icon={faArrowAltCircleRight} className={`ml-2 w-5 h-5 mt-1 ${upPageDisabled ? 'text-gray-400' : 'text-orange-400'}`} /></button>
                         </div>
-                        <div className='mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                        <div className='mt-5 gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                             {
                                 quotesArr?.map((quote) => (
                                     <OverlayImage quote={quote} key={quote?.id} />
@@ -78,7 +70,7 @@ const Quotes = () => {
                         }
                     </>
                     : <>
-                        <Login />
+                        {/* <Login /> */}
                     </>
             }
         </div>

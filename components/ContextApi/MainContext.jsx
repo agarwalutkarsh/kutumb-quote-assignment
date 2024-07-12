@@ -7,19 +7,15 @@ export const MainContext = createContext()
 
 const MainContextWrapper = (props) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
-    const [userDetails, setUserDetails] = useState({})
     const pathname = usePathname()
     const router = useRouter()
 
     useEffect(() => {
         const token = localStorage.getItem('token')
         if (token !== null && token !== undefined) {
-            setUserDetails({
-                firstName: localStorage.getItem('firstName') ?? '',
-                lastName: localStorage.getItem('lastName') ?? '',
-                email: localStorage.getItem('email') ?? ''
-            })
+            console.log('working')
             setIsLoggedIn(true)
+            router.push('/quote-list')
         }
     }, [])
 
@@ -37,17 +33,15 @@ const MainContextWrapper = (props) => {
 
     const state = useMemo(() => ({
         isLoggedIn,
-        userDetails,
-        setIsLoggedIn,
-        setUserDetails
+        setIsLoggedIn
     }), [isLoggedIn])
 
 
-  return (
-    <MainContext.Provider value={state}>
+    return (
+        <MainContext.Provider value={state}>
             {props.children}
         </MainContext.Provider>
-  )
+    )
 }
 
 export default MainContextWrapper

@@ -16,7 +16,7 @@ const RootLayout = ({ children }) => { // this is the root layout which is a wra
         </div>
         <main className='app'>
           <MainContextWrapper>
-            <Nav />
+              <Nav />
             {children}
           </MainContextWrapper>
         </main>

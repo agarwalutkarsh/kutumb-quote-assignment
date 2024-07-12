@@ -1,4 +1,5 @@
 // import Feed from "@/components/Feed"
+import Login from "@/components/Login"
 import Quotes from "@/components/Quotes"
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
         <br className="max-md:hidden" />
         <p className="orange_gradient head_text mb-2 p-2">Your Thoughts</p>
         <p className="desc m-auto">Open Source Tool for the mordern world to discover, create and share creative quotes</p>
-        <Quotes />
+        <Login />
       </div>
 
     </>

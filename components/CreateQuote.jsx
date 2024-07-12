@@ -2,7 +2,6 @@
 
 import { createQuoteApi, getMediaUrl } from '@/ApiService/Quotes'
 import { Box, TextField } from '@mui/material'
-import axios from 'axios'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
@@ -18,7 +17,6 @@ const CreateQuote = () => {
 
     const createPost = (e) => {
         e.preventDefault()
-        console.log(quoteBody)
         const submitDataBody = {
             text: quoteBody?.text,
             mediaUrl: quoteBody?.mediaUrl ?? ""

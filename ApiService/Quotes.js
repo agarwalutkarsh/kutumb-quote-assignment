@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const getAllQuotes = async (page) => {
     try {
-        const resp = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/getQuotes?limit=10&offset=${(page-1) * 10}`, {
+        const resp = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/getQuotes?limit=12&offset=${(page-1) * 12}`, {
             headers: {
                 'Authorization': `${localStorage.getItem('token')}`
             }

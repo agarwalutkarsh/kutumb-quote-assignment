@@ -24,7 +24,7 @@ const OverlayImage = ({ quote }) => {
                             </div>
                         )
                 }
-                <div className='absolute z-50 top-[50%] left-[50%]'>
+                <div className='absolute top-[50%] left-[50%]'>
                     <p className=' glassmorphism '>{quote?.text ?? '--'}</p>
                 </div>
             </div>
