@@ -7,7 +7,6 @@ import OverlayImage from './OverlayImage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowAltCircleLeft } from '@fortawesome/free-regular-svg-icons'
 import { faArrowAltCircleRight } from '@fortawesome/free-regular-svg-icons'
-import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 import NotAvailable from './NotAvailable'
 
 
@@ -53,7 +52,7 @@ const Quotes = () => {
 
                 mainContext.isLoggedIn
                     ? <>
-                        <div className='flex w-[10%]  mt-4'>
+                        <div className='flex w-full justify-center  mt-4'>
                             <button disabled={downPageDisabled} onClick={pageDown}><FontAwesomeIcon icon={faArrowAltCircleLeft} className={`mr-2 w-5 h-5 mt-1 ${downPageDisabled ? 'text-gray-400' : 'text-orange-400'}`} /></button>
                             <p className='my-auto'>{page}</p>
                             <button disabled={upPageDisabled} onClick={pageUp}><FontAwesomeIcon icon={faArrowAltCircleRight} className={`ml-2 w-5 h-5 mt-1 ${upPageDisabled ? 'text-gray-400' : 'text-orange-400'}`} /></button>
@@ -64,11 +63,11 @@ const Quotes = () => {
                                     <OverlayImage quote={quote} key={quote?.id} />
                                 ))
                             }
-                            {
-                                quotesArr?.length === 0 && <NotAvailable />
-                            }
 
                         </div>
+                        {
+                            quotesArr?.length === 0 && <NotAvailable />
+                        }
                     </>
                     : <>
                         <Login />
