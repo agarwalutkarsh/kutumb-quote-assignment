@@ -39,13 +39,13 @@ const CreateQuote = () => {
         formData.append('file', selectedImage)
         const resp = getMediaUrl(formData)
         resp.then((respData) => {
-            console.log(respData?.data?.[0]?.url)
             setQuoteBody({ ...quoteBody, mediaUrl: respData?.data?.[0]?.url ?? null })
         }).catch(err => console.error(err))
     })
+    
 
     return (
-        <Box className='w-full max-w-full flex flex-start flex-col'>
+        <Box className='w-full max-w-full flex flex-start flex-col mb-40'>
             <p className='head_text text-left blue_gradient'>Create Quote</p>
             <p className='desc'>Create and share the interesting quotes that could make a difference</p>
             <form onSubmit={createPost} className='mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism'>
