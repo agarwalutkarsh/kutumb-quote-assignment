@@ -19,7 +19,7 @@ const Nav = () => {
   }
 
   return (
-    <div className='fixed bottom-0 z-50 w-full'>
+    <div className='fixed bottom-0 z-50 w-full '>
       <nav className='flex-between w-full mb-0 mt-4 p-4 bg-purple-50 rounded-xl'>
         <div className='flex flex-row  justify-center'>
           <Link href='/' className='flex gap-3'>

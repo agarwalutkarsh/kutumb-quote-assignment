@@ -60,7 +60,7 @@ const Quotes = () => {
                             <p className='my-auto'>{page}</p>
                             <button disabled={upPageDisabled} onClick={pageUp}><FontAwesomeIcon icon={faArrowAltCircleRight} className={`ml-2 w-5 h-5 mt-1 ${upPageDisabled ? 'text-gray-400' : 'text-orange-400'}`} /></button>
                         </div>
-                        <div className='mt-5 gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                        <div className='mt-5 gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-20'>
                             {
                                 quotesArr?.map((quote) => (
                                     <OverlayImage quote={quote} key={quote?.id} />
