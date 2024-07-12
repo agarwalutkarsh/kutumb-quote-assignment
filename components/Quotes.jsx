@@ -43,15 +43,18 @@ const Quotes = () => {
     useEffect(() => {
         setDownPageDisabled(page === 1)
         setUpPageDisabled(quotesArr?.length === 0)
+        if (quotesArr?.length < mainContext?.limit) {
+            setUpPageDisabled(true)
+        }
     }, [quotesArr, page])
 
     return (
         <div>
-
+            <p className='head_text text-left blue_gradient'>All Quotes</p>
             {
 
                 mainContext?.isLoggedIn
-                    ? <>
+                    && <>
                         <div className='flex w-full justify-center  mt-4'>
                             <button disabled={downPageDisabled} onClick={pageDown}><FontAwesomeIcon icon={faArrowAltCircleLeft} className={`mr-2 w-5 h-5 mt-1 ${downPageDisabled ? 'text-gray-400' : 'text-orange-400'}`} /></button>
                             <p className='my-auto'>{page}</p>
@@ -68,9 +71,6 @@ const Quotes = () => {
                         {
                             quotesArr?.length === 0 && <NotAvailable />
                         }
-                    </>
-                    : <>
-                        {/* <Login /> */}
                     </>
             }
         </div>

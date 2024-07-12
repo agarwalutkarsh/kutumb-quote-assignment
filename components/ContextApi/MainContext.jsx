@@ -9,6 +9,7 @@ const MainContextWrapper = (props) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const pathname = usePathname()
     const router = useRouter()
+    const limit = 12
 
     useEffect(() => {
         const token = localStorage.getItem('token')
@@ -33,7 +34,8 @@ const MainContextWrapper = (props) => {
 
     const state = useMemo(() => ({
         isLoggedIn,
-        setIsLoggedIn
+        setIsLoggedIn,
+        limit
     }), [isLoggedIn])
 
 
