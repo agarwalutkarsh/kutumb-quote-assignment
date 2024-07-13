@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
 const NotAvailable = () => {
+    // Common No image available image component
     return (
         <div className='flex mx-auto  w-[50%] justify-center'>
             <FontAwesomeIcon icon={faQuoteLeft} className='w-10 h-10 md:w-32 md:h-32 lg:w-64 lg:h-64 mt-10 text-gray-300 m-auto' />

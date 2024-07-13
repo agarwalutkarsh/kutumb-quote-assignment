@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 
 const Loading = () => {
+    // Common component for loading
     return (
         <Dialog fullWidth={true} maxWidth='xs' open={true} PaperProps={{
             style: { height: '12rem', background: 'transparent', boxShadow: 'none' }

@@ -1,3 +1,9 @@
+## Author
+This is the Kutumb Assighment Submitted By Utkarsh Agarwal
+
+## Project Overview
+This project is a frontend application built using Next.js, Tailwind CSS, and Axios to interact with the provided APIs for user authentication, quote creation, and retrieval. The application is designed to be responsive and optimized for mobile devices.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

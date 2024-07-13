@@ -1,5 +1,7 @@
 import axios from "axios"
 
+// Quotes Api Service
+
 export const getAllQuotes = async (page) => {
     try {
         const resp = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/getQuotes?limit=12&offset=${(page-1) * 12}`, {

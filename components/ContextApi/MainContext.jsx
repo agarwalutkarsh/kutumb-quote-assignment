@@ -6,6 +6,7 @@ import { usePathname, useRouter } from 'next/navigation'
 export const MainContext = createContext()
 
 const MainContextWrapper = (props) => {
+    // Main context for state management accross all components
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const pathname = usePathname()
     const router = useRouter()
@@ -14,7 +15,6 @@ const MainContextWrapper = (props) => {
     useEffect(() => {
         const token = localStorage.getItem('token')
         if (token !== null && token !== undefined) {
-            console.log('working')
             setIsLoggedIn(true)
             router.push('/quote-list')
         }

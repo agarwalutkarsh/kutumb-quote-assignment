@@ -5,17 +5,19 @@ import Loading from './Loading'
 import { MainContext } from './ContextApi/MainContext'
 import { TextField } from '@mui/material'
 import { loginApi } from '@/ApiService/Auth'
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 import Link from 'next/link'
 
 
 const Login = () => {
+    // Login Page
     const [formBody, setFormBody] = useState({})
     const [showOtp, setShowOtp] = useState(false)
     const [loading, setLoading] = useState(false)
-    const router = useRouter()
+    // const router = useRouter()
     const mainContext = useContext(MainContext)
 
+    // Login Function Handler
     const loginFunc = (e) => {
         e.preventDefault()
         setLoading(true)
@@ -24,15 +26,16 @@ const Login = () => {
             if (userResp.status === 200) {
                 mainContext.setIsLoggedIn(true)
                 localStorage.setItem('token', userResp?.data?.token)
-                router.push('/quote-list')
+                // router.push('/quote-list')
             } else {
                 alert('Please login again')
             }
         }).catch((err) => {
-            console.log(err)
+            console.error(err)
         }).finally(() => setLoading(false))
     }
 
+    // Form Change Functionality
     const handleChange = (e) => {
         setFormBody({ ...formBody, [e.target.name]: e.target.value })
     }
@@ -45,10 +48,11 @@ const Login = () => {
 
     return (
         <>
+            {/* Loading Component */}
             {
                 loading && <Loading />
             }
-
+            {/* conditional rendering to handle different scenario of login */}
             {mainContext?.isLoggedIn ?
                 <div className='flex w-[50%] mx-auto mt-20 justify-center'>
                     <Link href='/create' className='black_btn my-2 mr-8 w-1/2' >

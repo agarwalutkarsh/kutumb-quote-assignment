@@ -1,6 +1,4 @@
-// import Feed from "@/components/Feed"
 import Login from "@/components/Login"
-import Quotes from "@/components/Quotes"
 
 const Home = () => {
   return (

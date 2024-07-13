@@ -7,11 +7,13 @@ import { MainContext } from './ContextApi/MainContext'
 import { useRouter } from 'next/navigation'
 
 const Nav = () => {
+  // Navbar
   const mainContext = useContext(MainContext)
   const router = useRouter()
 
   const isUserLoggedIn = mainContext.isLoggedIn ?? false
 
+  // Logout Handler
   const logoutHandler = () => {
     localStorage.clear()
     mainContext.setIsLoggedIn(false)

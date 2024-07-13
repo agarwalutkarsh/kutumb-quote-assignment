@@ -7,14 +7,17 @@ import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
 const CreateQuote = () => {
-
+    // Create Page
     const [quoteBody, setQuoteBody] = useState({})
     const router = useRouter()
 
+    // Input field change handler
     const handleChange = (e) => {
         setQuoteBody({ ...quoteBody, [e.target.name]: e.target.value })
     }
 
+    
+    // Submit form handler
     const createPost = (e) => {
         e.preventDefault()
         const submitDataBody = {
@@ -33,6 +36,7 @@ const CreateQuote = () => {
         })
     }
 
+    // Image Handler Function  - getting the media url
     const imageChangeHandler = ((e) => {
         const selectedImage = e.target.files[0]
         const formData = new FormData()
@@ -48,6 +52,7 @@ const CreateQuote = () => {
         <Box className='w-full max-w-full flex flex-start flex-col mb-40'>
             <p className='head_text text-left blue_gradient'>Create Quote</p>
             <p className='desc'>Create and share the interesting quotes that could make a difference</p>
+            {/* form starts */}
             <form onSubmit={createPost} className='mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism'>
                 <p className='font-satoshi font-semibold text-gray-700'>Enter Your Quote</p>
                 <TextField required placeholder='Share your thought for the day'
@@ -67,6 +72,7 @@ const CreateQuote = () => {
                     <button className='outline_btn' onClick={() => setQuoteBody({})}>Reset</button>
                 </div>
             </form>
+            {/* form ends */}
         </Box>
     )
 }

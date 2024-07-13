@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage } from '@fortawesome/free-regular-svg-icons'
 
 const OverlayImage = ({ quote }) => {
+    // Image Component
 
     return (
         <div className='w-max text-center text-lg font-semibold mx-auto mb-4 '>
@@ -20,7 +21,7 @@ const OverlayImage = ({ quote }) => {
                     )
                         : (
                             <div>
-                            <FontAwesomeIcon className='w-52 h-52 text-gray-200' icon={faImage} />
+                                <FontAwesomeIcon className='w-52 h-52 text-gray-200' icon={faImage} />
                             </div>
                         )
                 }
@@ -28,6 +29,7 @@ const OverlayImage = ({ quote }) => {
                     <p className=' glassmorphism '>{quote?.text ?? '--'}</p>
                 </div>
             </div>
+            {/* Image Details */}
             <div className='text-sm text-left'>
                 <p>UserName - {quote?.username ?? '--'}</p>
                 <p>Created At - {moment(quote?.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
