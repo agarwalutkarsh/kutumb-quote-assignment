@@ -20,7 +20,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-##Features
+## Features
 - Login page - Enables user to login using username and otp
 - Quote List Page -
     1. Displays paginated list of quotes
