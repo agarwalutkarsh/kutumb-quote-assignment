@@ -2,29 +2,39 @@
 This is the Kutumb Assighment Submitted By Utkarsh Agarwal
 
 ## Project Overview
-This project is a frontend application built using Next.js, Tailwind CSS, and Axios to interact with the provided APIs for user authentication, quote creation, and retrieval. The application is designed to be responsive and optimized for mobile devices.
+This project is a frontend application built using Next.js, Tailwind CSS, Material UI and Axios to interact with the provided APIs for user authentication, quote creation, and retrieval of quotes and generating media url. The application is designed to be responsive and optimized for mobile devices.
+
+## Live Demo
+🚀 The project is hosted on vercel and live 🚀. Go to [Project Demo](https://kutumb-quote-assignment.vercel.app/)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
-
-First, run the development server:
+Running Locally In Development Mode
 
 ```bash
+git clone https://github.com/agarwalutkarsh/kutumb-quote-assignment.git
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+##Features
+- Login page - Enables user to login using username and otp
+- Quote List Page -
+    1. Displays paginated list of quotes
+    2. Displays a image stored in mediaUrl with overlay text over the image
+    3. Pagination stops where the API return empty response
+    4. Below each image, username and created_at info is shown
+    5. Responsive design for optimal mobile experience
+- Quote Creation Page - Enables the user to post their quote with the image they want.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  ## Possible Future Improvements
+  - Designing alternative - Can have inifinite scrolling instead of pagination in the quotes listing.
+  - Optimization - CDNs can be explored for Image Optimization
+  - Performance Enhancement - Redis cache can be used to cache the data to enhance the performance and user experience
+
 
 ## Learn More
 
